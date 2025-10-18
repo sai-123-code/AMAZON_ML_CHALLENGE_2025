@@ -1,6 +1,6 @@
 # Amazon_ML_Challenge_2025
 
-Our team "Optimizers" attempt to solve amazon ml problem 2025 in this repo 
+Our team "Optimizers" attempt to solve amazon ml challenege 2025 in this repo and secured 985 rank out of 7100 teams
 
 <img width="824" height="344" alt="Screenshot 2025-10-18 225731" src="https://github.com/user-attachments/assets/3df3aa72-c382-4d27-985f-74866a030005" />
 
