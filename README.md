@@ -4,6 +4,19 @@ Our team "Optimizers" attempt to solve amazon ml problem 2025 in this repo
 
 ![Web_Photo_Editor](https://github.com/user-attachments/assets/d046d6da-0ea1-41f2-8761-4dbeea515fab)
 
+## Model Performance Summary
+
+| Version | Approach | Model Architecture | Key Features | SMAPE (%) |
+|---------|----------|-------------------|--------------|-----------|
+| **V1** | DistilBERT Baseline | DistilBERT-base-uncased (66M params) | Text-only NLP regression, regex feature extraction, 5 epochs training | 51.02 |
+| **V2** | DistilBERT Optimization | DistilBERT-base-uncased | V1 + hyperparameter tuning, improved preprocessing | 49.61 |
+| **V3** | Vision Transformer (Failed) | google/vit-base-patch16-224 | Image-only price prediction experiment | 190.00 |
+| **V4** | DistilBERT Extended Training | DistilBERT-base-uncased | V2 + 3 additional epochs from checkpoint, incremental improvements | 51.429 |
+| **V5** | DistilBERT Refinement | DistilBERT-base-uncased | Further training iterations, new data samples | 50.598 |
+| **V6** | Feature Engineering + LightGBM | LightGBM with 111 features | Hand-crafted features + TF-IDF + DistilBERT embeddings, unit normalization (46→11 variants) | 61.095 |
+| **V7** | Phi-3.5 Mini Instruction-tuned LLM | microsoft/Phi-3.5-mini-instruct (3.8B params) | Regression-focused instruction-tuned model, H100 GPU, 2 epochs | 56.82 |
+
+
 
 # 🧠 ML Challenge 2025 – Smart Product Pricing Challenge
 
@@ -50,10 +63,6 @@ The output must be a **CSV file** with exactly two columns:
 
 ## 🧱 File Descriptions
 
-### 📁 Source Files
-- **`src/utils.py`** — Helper functions for downloading product images from URLs. You may need to retry downloads due to throttling.  
-- **`sample_code.py`** — Example script that demonstrates how to format and generate a valid output file. (Optional usage)
-
 ### 📊 Dataset Files
 - **`dataset/train.csv`** — Training data with `price` labels.  
 - **`dataset/test.csv`** — Test data without `price` labels.  
@@ -90,23 +99,6 @@ If `actual price = 100` and `predicted price = 120`
 - **Public Leaderboard:** Based on 25K samples from the test set for real-time feedback.  
 - **Final Rankings:** Based on the full 75K test set and documentation quality.
 
----
-
-## 📝 Submission Requirements
-
-### 1️⃣ Output File
-Submit a file named **`test_out.csv`** with the format described above.
-
-### 2️⃣ Documentation
-Submit a **1-page report** describing:
-- Methodology used  
-- Model architecture or algorithms selected  
-- Feature engineering techniques  
-- Any additional implementation details  
-
-A template (`Documentation_template.md`) is provided.
-
----
 
 ## ⚠️ Academic Integrity & Fair Play
 
@@ -130,14 +122,3 @@ This challenge is meant to test your **data science and ML problem-solving skill
 - Handle **outliers** carefully and preprocess the data well.  
 - Ensure predictions are **realistic and positive**.
 
----
-
-## ✅ Summary
-You are building an ML model that predicts the **price of e-commerce products** using **text and image data**.  
-Your final deliverables are:
-1. **`test_out.csv`** — Predicted prices  
-2. **1-page report** — Description of your method  
-
-The goal is to achieve the **lowest SMAPE score** while adhering to fair play and good ML practices.
-
----
