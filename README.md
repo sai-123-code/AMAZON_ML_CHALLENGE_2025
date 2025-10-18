@@ -2,7 +2,8 @@
 
 Our team "Optimizers" attempt to solve amazon ml problem 2025 in this repo 
 
-![Web_Photo_Editor](https://github.com/user-attachments/assets/d046d6da-0ea1-41f2-8761-4dbeea515fab)
+<img width="824" height="344" alt="Screenshot 2025-10-18 225731" src="https://github.com/user-attachments/assets/3df3aa72-c382-4d27-985f-74866a030005" />
+
 
 ## Model Performance Summary
 
